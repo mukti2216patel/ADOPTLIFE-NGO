@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Display</title>
+<style>
+    .ad-box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  max-width: 300px;
+  text-align: center;
+}
+
+.ad-box h3 {
+  margin-top: 0;
+}
+
+.ad-box p {
+  margin-bottom: 0;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<button id="showAdBtn">Show Ad</button>
+
+<div id="adBox" class="ad-box">
+  <span class="close" onclick="closeAd()">&times;</span>
+  <h3>Advertisement</h3>
+  <p>This is your ad content. You can customize it as per your requirements.</p>
+</div>
+
+<script>
+// Get the button and ad box elements
+const showAdBtn = document.getElementById('showAdBtn');
+const adBox = document.getElementById('adBox');
+
+// Function to show the ad box
+function showAd() {
+  adBox.style.display = 'block';
+}
+
+// Function to close the ad box
+function closeAd() {
+  adBox.style.display = 'none';
+}
+
+// Event listener for the button click
+showAdBtn.addEventListener('click', showAd);
+
+</script>
+</body>
+</html>

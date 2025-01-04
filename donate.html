@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Donation Form</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, green 50%, white 50%);
+}
+
+.container {
+    padding: 30px;
+    max-width: 600px;
+    height: auto;
+    background: linear-gradient(to right, white 5%, green 119%);
+    /* background-color: #eae5e5; */
+    border-radius: 5px;
+    margin: 27px auto;
+    box-shadow: -8px 5px 20px 1px #000000e6;
+   
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    color:black;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.form-group input {
+    flex: 1;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.radio-group label {
+    margin-right: 20px;
+}
+
+.donation-amount,
+.donation-frequency,.payment-method {
+    margin-bottom: 20px;
+    /* text-align: center; */
+
+}
+
+.donation-amount .radio-group,
+.donation-frequency .radio-group,
+.payment-method .radio-group {
+    flex-direction: row;
+    margin: 10px;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.terms-and-conditions {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.terms-and-conditions input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+.fp{
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 600;
+
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PayPal Donation Form</h1>
+        <p>Your donation will help us continue our mission to make a difference in the world.</p>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Address Line 1" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Address Line 2">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="City" required>
+                <input type="text" placeholder="State/Province" required>
+                <input type="text" placeholder="Zip/Postal Code" required>
+            </div>
+            <div class="donation-amount">
+                <label class="fp">DONATION AMOUNT</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" name="amount" id="amount1" value="10">
+                        <label for="amount1">$10</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="amount" id="amount2" value="25">
+                        <label for="amount2">$25</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="amount" id="amount3" value="50">
+                        <label for="amount3">$50</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="amount" id="amount4" value="100">
+                        <label for="amount4">$100</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="amount" id="amount5" value="250">
+                        <label for="amount5">$250</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="amount" id="amount6" value="other">
+                        <label for="amount6">Other</label>
+                    </div>
+                </div>
+            </div>
+            <div class="donation-frequency">
+                <label class="fp">DONATION FREQUENCY</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" name="frequency" id="once" value="once">
+                        <label for="once">One Time</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="frequency" id="monthly" value="monthly">
+                        <label for="monthly">Monthly</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="frequency" id="yearly" value="yearly">
+                        <label for="yearly">Yearly</label>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-method">
+                <label class="fp">PAYMENT METHOD</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" name="payment" id="paypal" value="paypal" checked>
+                        <label for="paypal">PayPal</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="payment" id="card" value="card">
+                        <label for="card">Debit or Credit Card</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="payment" id="transfer" value="transfer">
+                        <label for="transfer">Wire Transfer</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="payment" id="check" value="check">
+                        <label for="check">Check</label>
+                    </div>
+                </div>
+            </div>
+            <div class="terms-and-conditions">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the terms and conditions.</label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
